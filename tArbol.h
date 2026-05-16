@@ -18,6 +18,8 @@ int existeDios(tArbol arbol, char *nombre);
 
 int esPadre(tArbol arbol, char *padre, char *hijo);
 
+void mostrarElemento(tArbol arbol);
+
 void imprimirPreorden(tArbol arbol);
 
 #endif
