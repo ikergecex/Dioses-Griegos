@@ -10,7 +10,7 @@ void crearArbolVacio(tArbol *arbol) {
 
 void construirArbol(tArbol* arb, tArbol izq, tDios dios, tArbol der) {
     *arb = (tArbol) malloc(sizeof(tNodo));
-    (*arb)->dios = dios;
+    asignarDios(&(*arb)->dios, dios);
     (*arb)->izq = izq;
     (*arb)->der = der;
 }
@@ -40,9 +40,16 @@ int esPadre(tArbol arbol, char *padre, char *hijo) {
     return esPadre(arbol->izq, padre, hijo) || esPadre(arbol->der, padre, hijo);
 }
 
+void mostrarElemento(tArbol arbol) {
+    if (arbol != NULL) {
+        printf("%s", arbol->dios.nombre);
+    }
+}
+
 void imprimirPreorden(tArbol arbol) {
     if (arbol != NULL) {
-        printf("%s, ", arbol->dios.nombre);
+        mostrarElemento(arbol);
+        printf(" ");
         imprimirPreorden(arbol->izq);
         imprimirPreorden(arbol->der);
     }
