@@ -8,6 +8,10 @@ typedef struct tDios {
 
 void crearDios(tDios* dios, char* nombre, char* descripcion);
 
+void mostrarDios(const tDios *d);
+
 int esIgualDios(char* d1, char* d2);
+
+void asignarDios(tDios *d1, tDios d2);
 
 #endif
